@@ -26,10 +26,25 @@ function percentage(value, ofValue) {
   return (value / ofValue) * 100;
 }
 
+function sine(angle) {
+  return Math.sin(angle);
+}
+
+function cosine(angle) {
+  return Math.cos(angle);
+}
+
+function tangent(angle) {
+  return Math.tan(angle);
+}
+
 module.exports = {
   add,
   subtract,
   multiply,
   divide,
   percentage,
+  sine,
+  cosine,
+  tangent,
 };
