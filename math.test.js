@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide, percentage } = require('./math');
+const { add, subtract, multiply, divide, percentage, sine, cosine, tangent } = require('./math');
 
 test('adds 2 + 3 to equal 5', () => {
   expect(add(2, 3)).toBe(5);
@@ -26,4 +26,16 @@ test('calculates percentage accurately', () => {
 
 test('throws when denominator is zero', () => {
   expect(() => percentage(25, 0)).toThrow('Cannot calculate percentage with a zero denominator');
+});
+
+test('calculates sine for 0 radians', () => {
+  expect(sine(0)).toBeCloseTo(0);
+});
+
+test('calculates cosine for 0 radians', () => {
+  expect(cosine(0)).toBeCloseTo(1);
+});
+
+test('calculates tangent for PI/4 radians', () => {
+  expect(tangent(Math.PI / 4)).toBeCloseTo(1);
 });
