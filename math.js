@@ -6,6 +6,18 @@ function subtract(a, b) {
   return a - b;
 }
 
+function multiply(a, b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error('Cannot divide by zero');
+  }
+
+  return a / b;
+}
+
 function percentage(value, ofValue) {
   if (ofValue === 0) {
     throw new Error('Cannot calculate percentage with a zero denominator');
@@ -33,7 +45,10 @@ function power(base, exponent) {
 module.exports = {
   add,
   subtract,
+  multiply,
+  divide,
   percentage,
   sqrt,
   power,
+};
 };
