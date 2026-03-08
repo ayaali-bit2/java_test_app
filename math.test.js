@@ -1,4 +1,4 @@
-const { add, subtract, percentage } = require('./math');
+const { add, subtract, multiply, divide, percentage } = require('./math');
 
 test('adds 2 + 3 to equal 5', () => {
   expect(add(2, 3)).toBe(5);
@@ -6,6 +6,18 @@ test('adds 2 + 3 to equal 5', () => {
 
 test('subtracts 5 - 2 to equal 3', () => {
   expect(subtract(5, 2)).toBe(3);
+});
+
+test('multiplies 2 * 3 to equal 6', () => {
+  expect(multiply(2, 3)).toBe(6);
+});
+
+test('divides 6 / 2 to equal 3', () => {
+  expect(divide(6, 2)).toBe(3);
+});
+
+test('throws when dividing by zero', () => {
+  expect(() => divide(6, 0)).toThrow('Cannot divide by zero');
 });
 
 test('calculates percentage accurately', () => {
