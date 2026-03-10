@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide, bitwiseAnd, bitwiseOr, bitwiseXor, bitwiseNot, percentage, sine, cosine, tangent } = require('./math');
+const { add, subtract, multiply, divide, bitwiseAnd, bitwiseOr, bitwiseXor, bitwiseNot, decimalToBinary, decimalToHex, binaryToDecimal, hexToDecimal, percentage, sine, cosine, tangent } = require('./math');
 
 test('adds 2 + 3 to equal 5', () => {
   expect(add(2, 3)).toBe(5);
@@ -54,4 +54,36 @@ test('calculates cosine for 0 radians', () => {
 
 test('calculates tangent for PI/4 radians', () => {
   expect(tangent(Math.PI / 4)).toBeCloseTo(1);
+});
+
+test('converts decimal to binary string', () => {
+  expect(decimalToBinary(42)).toBe('101010');
+});
+
+test('converts decimal to hex string', () => {
+  expect(decimalToHex(255)).toBe('FF');
+});
+
+test('converts binary string to decimal', () => {
+  expect(binaryToDecimal('1010')).toBe(10);
+});
+
+test('converts hex string to decimal', () => {
+  expect(hexToDecimal('1A')).toBe(26);
+});
+
+test('throws when decimalToBinary receives a non-integer', () => {
+  expect(() => decimalToBinary(3.14)).toThrow('Invalid decimal value');
+});
+
+test('throws when decimalToHex receives a non-integer', () => {
+  expect(() => decimalToHex(2.5)).toThrow('Invalid decimal value');
+});
+
+test('throws when binaryToDecimal receives invalid input', () => {
+  expect(() => binaryToDecimal('102')).toThrow('Invalid binary value');
+});
+
+test('throws when hexToDecimal receives invalid input', () => {
+  expect(() => hexToDecimal('G1')).toThrow('Invalid hexadecimal value');
 });
