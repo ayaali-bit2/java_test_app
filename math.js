@@ -18,6 +18,22 @@ function divide(a, b) {
   return a / b;
 }
 
+function bitwiseAnd(a, b) {
+  return a & b;
+}
+
+function bitwiseOr(a, b) {
+  return a | b;
+}
+
+function bitwiseXor(a, b) {
+  return a ^ b;
+}
+
+function bitwiseNot(value) {
+  return ~value;
+}
+
 function percentage(value, ofValue) {
   if (ofValue === 0) {
     throw new Error('Cannot calculate percentage with a zero denominator');
@@ -43,6 +59,10 @@ module.exports = {
   subtract,
   multiply,
   divide,
+  bitwiseAnd,
+  bitwiseOr,
+  bitwiseXor,
+  bitwiseNot,
   percentage,
   sine,
   cosine,
