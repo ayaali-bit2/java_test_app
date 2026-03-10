@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide, percentage, sine, cosine, tangent } = require('./math');
+const { add, subtract, multiply, divide, percentage, sine, cosine, tangent, asin, acos, atan } = require('./math');
 
 test('adds 2 + 3 to equal 5', () => {
   expect(add(2, 3)).toBe(5);
@@ -38,4 +38,16 @@ test('calculates cosine for 0 radians', () => {
 
 test('calculates tangent for PI/4 radians', () => {
   expect(tangent(Math.PI / 4)).toBeCloseTo(1);
+});
+
+test('calculates arcsine for 0 radians', () => {
+  expect(asin(0)).toBeCloseTo(0);
+});
+
+test('calculates arccosine for 1', () => {
+  expect(acos(1)).toBeCloseTo(0);
+});
+
+test('calculates arctangent for 1', () => {
+  expect(atan(1)).toBeCloseTo(Math.PI / 4);
 });

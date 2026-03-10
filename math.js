@@ -38,6 +38,18 @@ function tangent(angle) {
   return Math.tan(angle);
 }
 
+function asin(angle) {
+  return Math.asin(angle);
+}
+
+function acos(angle) {
+  return Math.acos(angle);
+}
+
+function atan(angle) {
+  return Math.atan(angle);
+}
+
 module.exports = {
   add,
   subtract,
@@ -47,4 +59,7 @@ module.exports = {
   sine,
   cosine,
   tangent,
+  asin,
+  acos,
+  atan,
 };
