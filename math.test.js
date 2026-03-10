@@ -1,3 +1,4 @@
+const { add, subtract, multiply, divide, bitwiseAnd, bitwiseOr, bitwiseXor, bitwiseNot, decimalToBinary, decimalToHex, binaryToDecimal, hexToDecimal, percentage, sine, cosine, tangent } = require('./math');
 const { add, subtract, multiply, divide, percentage, sine, cosine, tangent, asin, acos, atan, leftShift, rightShift } = require('./math');
 
 test('adds 2 + 3 to equal 5', () => {
@@ -20,6 +21,22 @@ test('throws when dividing by zero', () => {
   expect(() => divide(6, 0)).toThrow('Cannot divide by zero');
 });
 
+test('performs bitwise AND', () => {
+  expect(bitwiseAnd(5, 3)).toBe(1);
+});
+
+test('performs bitwise OR', () => {
+  expect(bitwiseOr(5, 2)).toBe(7);
+});
+
+test('performs bitwise XOR', () => {
+  expect(bitwiseXor(5, 3)).toBe(6);
+});
+
+test('performs bitwise NOT', () => {
+  expect(bitwiseNot(0)).toBe(-1);
+});
+
 test('calculates percentage accurately', () => {
   expect(percentage(25, 100)).toBe(25);
 });
@@ -40,6 +57,36 @@ test('calculates tangent for PI/4 radians', () => {
   expect(tangent(Math.PI / 4)).toBeCloseTo(1);
 });
 
+test('converts decimal to binary string', () => {
+  expect(decimalToBinary(42)).toBe('101010');
+});
+
+test('converts decimal to hex string', () => {
+  expect(decimalToHex(255)).toBe('FF');
+});
+
+test('converts binary string to decimal', () => {
+  expect(binaryToDecimal('1010')).toBe(10);
+});
+
+test('converts hex string to decimal', () => {
+  expect(hexToDecimal('1A')).toBe(26);
+});
+
+test('throws when decimalToBinary receives a non-integer', () => {
+  expect(() => decimalToBinary(3.14)).toThrow('Invalid decimal value');
+});
+
+test('throws when decimalToHex receives a non-integer', () => {
+  expect(() => decimalToHex(2.5)).toThrow('Invalid decimal value');
+});
+
+test('throws when binaryToDecimal receives invalid input', () => {
+  expect(() => binaryToDecimal('102')).toThrow('Invalid binary value');
+});
+
+test('throws when hexToDecimal receives invalid input', () => {
+  expect(() => hexToDecimal('G1')).toThrow('Invalid hexadecimal value');
 test('calculates arcsine for 0 radians', () => {
   expect(asin(0)).toBeCloseTo(0);
 });
