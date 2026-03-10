@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide, percentage, sine, cosine, tangent, asin, acos, atan } = require('./math');
+const { add, subtract, multiply, divide, percentage, sine, cosine, tangent, asin, acos, atan, leftShift, rightShift } = require('./math');
 
 test('adds 2 + 3 to equal 5', () => {
   expect(add(2, 3)).toBe(5);
@@ -50,4 +50,12 @@ test('calculates arccosine for 1', () => {
 
 test('calculates arctangent for 1', () => {
   expect(atan(1)).toBeCloseTo(Math.PI / 4);
+});
+
+test('performs left shift by 2 bits', () => {
+  expect(leftShift(1, 2)).toBe(4);
+});
+
+test('performs right shift by 1 bit', () => {
+  expect(rightShift(4, 1)).toBe(2);
 });

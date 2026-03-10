@@ -50,6 +50,14 @@ function atan(angle) {
   return Math.atan(angle);
 }
 
+function leftShift(value, bits) {
+  return value << bits;
+}
+
+function rightShift(value, bits) {
+  return value >> bits;
+}
+
 module.exports = {
   add,
   subtract,
@@ -62,4 +70,6 @@ module.exports = {
   asin,
   acos,
   atan,
+  leftShift,
+  rightShift,
 };
