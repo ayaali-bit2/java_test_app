@@ -1,5 +1,26 @@
-const { add, subtract, multiply, divide, bitwiseAnd, bitwiseOr, bitwiseXor, bitwiseNot, decimalToBinary, decimalToHex, binaryToDecimal, hexToDecimal, percentage, sine, cosine, tangent } = require('./math');
-const { add, subtract, multiply, divide, percentage, sine, cosine, tangent, asin, acos, atan, leftShift, rightShift } = require('./math');
+const {
+  add,
+  subtract,
+  multiply,
+  divide,
+  bitwiseAnd,
+  bitwiseOr,
+  bitwiseXor,
+  bitwiseNot,
+  decimalToBinary,
+  decimalToHex,
+  binaryToDecimal,
+  hexToDecimal,
+  percentage,
+  sine,
+  cosine,
+  tangent,
+  asin,
+  acos,
+  atan,
+  leftShift,
+  rightShift,
+} = require('./math');
 
 test('adds 2 + 3 to equal 5', () => {
   expect(add(2, 3)).toBe(5);
@@ -87,6 +108,8 @@ test('throws when binaryToDecimal receives invalid input', () => {
 
 test('throws when hexToDecimal receives invalid input', () => {
   expect(() => hexToDecimal('G1')).toThrow('Invalid hexadecimal value');
+});
+
 test('calculates arcsine for 0 radians', () => {
   expect(asin(0)).toBeCloseTo(0);
 });
